@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="ru">
+
+<title>Контакты - Медицинский клинический центр Медика</title>
+<link rel="icon" type="image/png" href="../favicon.png">
+{% block content %}
+
+
+<div class="container">
+    <div class="b-bread-crumbs"><a href="{% url 'home' %}">Главная</a><span>Контакты</span></div>
+    <div class="b-component-title">
+        <div class="d-flex justify-content-between">
+            <h1>Контакты</h1>
+            <a class="link-to-all" href="{% url 'about' %}">
+                <span>О клинике</span>
+
+                <svg class="icon icon_title-grid ">
+                    <use xlink:href="../local/templates/gm/images/sprite.svg#title-grid"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="b-contacts">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="contact">
+                    <h2>Добро пожаловать!</h2>
+                    <div>
+                        ООО "Интермедикал", <br>
+                        654007, Россия, <br>
+                        Кемеровская область, г. Междуреченск<br>
+                        пр-т Коммунистический, 8<br>
+                        Телефон приёмной генерального директора и главного врача клиники:<br>
+                        <a href="tel:+73843993932">&nbsp;8 (3843) 993-932</a><br>
+                        <br>
+                        <h2>Режим и график работы</h2>
+                        понедельник — пятница: с 8:00 до 20:00<br>
+                        суббота: с 8:00 до 16:00 <br>
+                        воскресенье: выходной<br>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="contact">
+                    <h2>Для пациентов</h2>
+                    <div>
+                        Телефон: <a href="tel:+73843994040">8 (3843) 99-40-40</a>
+                        <div>
+                            E-mail: <a target="_blank" href="mailto:info@gm.clinic">info@gm.clinic</a><br>
+                            <br>
+                            <h2>Нужно что то написать в этом месте !!!</h2>
+                        </div>
+                        C автовокзала на автобусе: 102&nbsp; до остановки «Гранд Медика»<br>
+                        <br>
+                        C железнодорожного вокзала на автобусах:&nbsp; 27,&nbsp; &nbsp;МА105&nbsp; до остановки «Гранд
+                        Медика»<br>
+                        <br>
+                        От остановки «Левый берег» на автобусах:&nbsp; 27,&nbsp; 28,&nbsp; 87&nbsp; до остановки "Гранд
+                        Медика"<br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="contact">
+                    <h2>Для организаций</h2>
+                    <div>
+                        <a href="mailto:info@gm.clinic" target="_blank"></a>
+                        <div>
+                            Коммерческие предложения<br>
+                            Телефон приёмной: <a href="tel:+73843993932">8 (3843) 993-932</a><br>
+                            <a href="mailto:info@gm.clinic" target="_blank">info@gm.clinic</a> <br>
+                            <br>
+                            ДМС-сотрудничество<br>
+                            Телефон приёмной: <a href="tel:+73843993932">8 (3843) 993-932</a> доп. 7355<br>
+                            <a href="mailto:dms@gm.clinic" target="_blank">dms@gm.clinic</a> <br>
+                            <br>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+
+{% endblock content %}

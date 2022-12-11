@@ -1,0 +1,120 @@
+{% load static %}
+{% load menu %}
+<div class="b-header">
+    <a class="logo" href="{% url 'home' %}">
+        <img src="{% static 'logo.svg' %}" alt="grandmedica">
+
+        <div class="slogan">
+        </div>
+    </a>
+
+    <div class="right-menu">
+        <div class="tel d-none d-md-block">
+            <a href="tel:+73847564664">8 (38475)&nbsp;64-6-64,</a> <a href="tel:++73847564664">64-6-64</a>
+
+            <svg class="icon icon_header-tel ">
+                <use xlink:href="../local/templates/gm/images/sprite.svg#header-tel"></use>
+            </svg>
+        </div>
+        <a class="nav burger">
+            <button class="hamburger hamburger--slider js-show-menu" type="button">
+                <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+            </button>
+            <div class="menu">меню</div>
+        </a>
+    </div>
+</div>
+<div class="b-menu">
+
+    <div class="nav-box">
+        <div class="nav">
+
+            <nav class="nav-column">
+                <div class="div">
+                    <a href="{% url 'about' %}" class="link title-menu ">
+                        О клинике <span class="plus"></span>
+                    </a>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="{% url 'about' %}">О компании</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{% url 'contacts' %}">Контакты</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'doctors' %}">Все врачи</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <nav class="nav-column">
+                <div class="div">
+                    <a href="{% url 'news' %}" class="link title-menu ">
+                        Пациенту <span class="plus"></span>
+                    </a>
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="{% url 'price' %}">Прейскурант</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'news' %}">Новости и Акции</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'prepare' %}">Правила подготовки к диагностическим исследованиям </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <nav class="nav-column">
+                <div class="{{ menu_class }}">
+                    <a href="{% url 'directions' %}" class="link title-menu ">
+                        Услуги <span class="plus"></span>
+                    </a>
+                    <ul class="nav-menu">
+                        {% show_menu %}
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+
+    <div class="bottom-footer-menu">
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <div class="column">
+                    <div class="clinic-in-social">Клиника в социальных сетях</div>
+
+
+                    <div class="social">
+
+
+                        <noindex><a class="link-social" href="https://vk.com/grand_medica_mzk" target="_blank"
+                                rel="nofollow">
+
+                                <svg class="icon icon_menu-vk ">
+                                    <use xlink:href="{% static '/img/sprite.svg' %}#footer-vk"></use>
+                                </svg> </a></noindex>
+
+
+                        <noindex><a class="link-social" href="https://instagram.com/grand_medica_mzk" target="_blank"
+                                rel="nofollow">
+
+                                <svg class="icon icon_menu-youtube link-youtube">
+                                    <use xlink:href="{% static '/img/sprite.svg' %}#footer-insta"></use>
+                                </svg> </a></noindex>
+
+                        <noindex><a class="link-social" href="https://ok.ru/profile/582934989929" target="_blank"
+                                rel="nofollow">
+
+                                <svg class="icon icon_footer-ok footer-ok">
+                                    <use xlink:href="{% static '/img/sprite.svg' %}#footer-ok"></use>
+                                </svg> </a></noindex>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

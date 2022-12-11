@@ -1,0 +1,4 @@
+{% for item in directions %}
+<li class="nav-item">
+    <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+    {% endfor %}

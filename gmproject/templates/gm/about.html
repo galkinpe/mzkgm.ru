@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'inc/_slider.html' %}
+
+
+<div class="container">
+
+    <div class="b-about">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="description">
+                    <p>
+                        Медицинский клинический центр "Медика" оказывает полный цикл медицинской помощи — от
+                        консультативного приёма до проведения высокотехнологичных операций и реабилитации пациентов.
+                        Основной фокус медицинской деятельности клиники — хирургия и высокие технологии.
+                    </p>
+                    <p>
+                        Высокий заявленный статус обязывает обеспечивать высочайшее качество клиентского сервиса,
+                        направленного на максимально комфортное пребывание пациента в клинике.
+                    </p>
+                    <p>
+                        Привлечение лучших рестораторов позволило организовать питание пациентов с возможностью
+                        предварительного заказа блюд. Кроме того, для всех посетителей и сотрудников клиники
+                        организована работа уютного кафе.
+                    </p>
+                    <p>
+                        В целом все эти условия позволят привлекать в клинику пациентов не только Сибири, но и других
+                        регионов России и зарубежья.&nbsp;
+                    </p>
+                    <p>
+                    </p>
+                    <p>
+                        К работе в клинике привлечены лучшие специалисты Кузбасса и соседних регионов. В штате
+                        медицинского центра более 20 докторов и кандидатов медицинских наук. Медицинский персонал
+                        клиники будет иметь возможность постоянно повышать свою квалификацию в ведущих клиниках России и
+                        за рубежом, участвовать в конференциях и семинарах, а также заниматься научной работой. На базе
+                        клиники совместно с образовательными учреждениями региона планируется организовать центр
+                        непрерывного медицинского образования с проведением мастер-классов от ведущих мировых
+                        специалистов.
+                    </p>
+                    <p>
+                        Управление всеми инженерными коммуникациями осуществляется с компьютера — так называемая система
+                        «умная больница». В операционных применяются ламинарные потоки воздуха, что обеспечивает
+                        беспрецедентный уровень безопасности и полностью исключает заражение внутри больницы.
+                    </p>
+
+                </div>
+
+
+                <div class="collapse" id="about-description-hidden" role="tabpanel" aria-labelledby="about-description">
+                    <div class="description">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="gallery">
+
+
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <img class="image js-main-image" src="{% static '/img/about/1.jpg' %}" width="630" height="400"
+                             alt="Т" title="Т">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="b-component-title">
+        <div class="d-flex justify-content-between">
+            <h2>Лицензии и сертификаты</h2>
+
+
+        </div>
+    </div>
+
+    <div class="b-docs-slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a class="doc" href="{% static '/img/lic/1.jpg' %}" data-toggle="lightbox"
+                       data-gallery="about-docs">
+                        <img class="img" src="{% static '/img/lic/1.jpg' %}" width="200" height="280">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a class="doc" href="{% static '/img/lic/2.jpg' %}" data-toggle="lightbox"
+                       data-gallery="about-docs">
+                        <img class="img" src="{% static '/img/lic/2.jpg' %}" width="200" height="280">
+                    </a>
+                </div>
+                <div class=" swiper-slide">
+                    <a class="doc" href="{% static '/img/lic/3.jpg' %}" data-toggle="lightbox"
+                       data-gallery="about-docs">
+                        <img class="img" src="{% static '/img/lic/3.jpg' %}" width="200" height="280">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="b-slider-mobile-navigation hidden-sm-up">
+        <div class="swiper-button-prev"></div>
+        <a class="link" href="../docs/index.html">
+            <span>Нормативная документация</span>
+
+            <svg class="icon icon_slider-mobile-navigation-grid ">
+                <use xlink:href="../local/templates/gm/images/sprite.svg#slider-mobile-navigation-grid"></use>
+            </svg>
+        </a>
+        <div class="swiper-button-next"></div>
+    </div>
+
+
+    {% endblock %}

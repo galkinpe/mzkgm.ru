@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<title>Подготовки к диагностическим исследованиям - Медицинский клинический центр Медика</title>
+
+<div class="container">
+    <div class="b-bread-crumbs"><a href="{% url 'home' %}">Главная</a><span>Подготовки к диагностическим
+            исследованиям</span></div>
+    <div class="b-component-title">
+        <div class="d-flex justify-content-between">
+            <h1>Подготовки к диагностическим исследованиям</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="b-normative-documents">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                {% for item in data %}
+                <ul class="docs-list list-unstyled">
+                    <li id="bx_2745216059_10269" class="item">
+                        <a href="{{ item.file.url }}" target="_blank">
+                            {{ item.title }}<span>
+                                .PDF</span> </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>
+{% endblock %}

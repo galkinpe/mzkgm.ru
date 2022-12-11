@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="ru">
+
+{% block content %}
+
+<div class="container">
+    <div class="b-bread-crumbs"><a href="{% url 'home' %}">Главная</a><a
+            href="{% url 'directions' %}">Услуги</a><span>{{ direction.title }}</span></div>
+    <div class="b-component-title">
+        <div class="d-flex justify-content-between">
+            <h1>{{ direction.title }}</h1>
+            <a class="link-to-all" href="{% url 'directions' %}">
+                <span>Все направления</span>
+
+                <svg class="icon icon_title-grid ">
+                    <use xlink:href="../../local/templates/gm/images/sprite.svg#title-grid"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="b-detail-direction">
+    <div class="illustration-direction">
+        {% if direction.image %}
+        <img class="img" src="{{ direction.image.url }}" width="1600" height="731">
+        {% else %}
+        <p></p>
+        {% endif %}
+    </div>
+</div>
+
+<div class="container">
+    <div class="b-about">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="description">
+                    {{ direction.content|safe }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

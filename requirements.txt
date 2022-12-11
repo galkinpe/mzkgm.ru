@@ -1,0 +1,5 @@
+Django
+autopep8
+pylint
+pylint-django
+pylint-plugin-utils

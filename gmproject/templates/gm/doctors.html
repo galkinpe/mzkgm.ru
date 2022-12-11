@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="ru">
+
+{% block content %}
+
+<div class="container">
+    <div class="b-bread-crumbs"><a href="{% url 'home' %}">Главная</a><span>Врачи клиники</span></div>
+    <div class="b-component-title">
+        <div class="d-flex justify-content-between">
+            <h1>Врачи клиники
+
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+
+    <div class="b-doctors-list d-md-block d-none js-wow fadeInUpSmall">
+        <div class="row">
+            {% for item in doctors %}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-1-5">
+
+                <a href="{{ item.get_absolute_url }}" id="bx_2745216059_131" class="doctor">
+                    <div class="embed-responsive embed-responsive-3by4">
+                        {% if item.image %}
+                        <img class="img" src={{ item.image.url }} width="289" height="400" alt="Фото" title="Фото">
+                    </div>
+                    {% else %}
+                    <p></p>
+                    {% endif %}
+                    <div class="content">
+                        <div class="name">{{ item.title }}</div>
+
+                        <div class="description">{{ item.shortdescription|safe }}</div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}

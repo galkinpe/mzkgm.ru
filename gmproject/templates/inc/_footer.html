@@ -1,0 +1,130 @@
+{% load static %}
+{% load menu %}
+<div class="b-footer">
+    <div class="container">
+        <div class="footer-menu align-items-stretch">
+
+
+            <div class="column">
+                <ul class="nav-menu list-unstyled">
+
+                    <li class="nav-item">
+                        <a style="color: #212529;" href="{% url 'about' %}">
+                            О клинике </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{% url 'contacts' %}">
+                            Контакты </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{% url 'doctors' %}">
+                            Врачи клиники </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+                <ul class="nav-menu list-unstyled">
+                    <li class="nav-item">
+                        <a style="color: #212529;" href="{% url 'news' %}">
+                            Пациенту </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="{% url 'price' %}">
+                            Прейскурант </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{% url 'news' %}">
+                            Новости и Акции</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="prepare/index.html">
+                            Правила подготовки к диагностическим исследованиям </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="column">
+
+                <ul class="nav-menu list-unstyled">
+
+                    <li class="nav-item">
+                        <a style="color: #212529;" href="{% url 'directions' %}">
+                            Услуги </a>
+                    </li>
+                    {% show_menu %}
+                </ul>
+            </div>
+
+
+            <div class="column social-column">
+
+                <div class="social">
+                    <div class="title-social">Наши социальные сети</div>
+
+
+
+
+                    <noindex><a class="link-social" href="https://vk.com/grand_medica_mzk" target="_blank"
+                            rel="nofollow">
+
+                            <svg class="icon icon_footer-vk ">
+                                <use xlink:href="{% static '/img/sprite.svg' %}#footer-vk"></use>
+                            </svg> </a></noindex>
+
+
+                    <noindex><a class="link-social" href="https://instagram.com/grand_medica_mzk" target="_blank"
+                            rel="nofollow">
+
+                            <svg class="icon icon_footer-youtube link-youtube">
+                                <use xlink:href="{% static '/img/sprite.svg' %}#footer-insta"></use>
+                            </svg> </a></noindex>
+
+                    <noindex><a class="link-social" href="https://ok.ru/profile/582934989929" target="_blank"
+                            rel="nofollow">
+
+                            <svg class="icon icon_footer-ok footer-ok">
+                                <use xlink:href="{% static '/img/sprite.svg' %}#footer-ok"></use>
+                            </svg> </a></noindex>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-sub">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="column">
+                        <div class="title"><b>Гранд</b> Медика</div>
+                        <div class="tel">
+                            <a href="tel:+73847564664">8 (38475)&nbsp;64-6-64,</a> <a
+                                href="tel:+73847564664">64-6-64</a>
+                        </div>
+                        <div class="tel">
+                            <span class="light-gray">
+                            </span>
+                        </div>
+                        <p>
+
+                        </p>
+                        <p>E-Mail: <a href="mailto:info@gm.clinic">info@gm.clinic</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="column">
+                        <div class="title"><b>Наш адрес</b></div>
+
+                        <div>
+                            ООО "Интермедикал", 652870, Междуреченск
+                            просп.&nbsp;Коммунистический,&nbsp;8 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

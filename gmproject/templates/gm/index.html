@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- SLIDER -->
+{% include 'inc/_slider.html' %}
+
+<div class="container">
+    <div class="b-slider-mobile-navigation hidden-sm-up for-directions">
+        <div class="swiper-button-prev swiper-button-disabled"></div>
+
+        <a class="link" href="directions/index.html">
+            <span>Все направления деятельности</span>
+
+            <svg class="icon icon_slider-mobile-navigation-grid ">
+                <use xlink:href="img/svg/sprite.svg#slider-mobile-navigation-grid"></use>
+            </svg> </a>
+
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
+<div class="container">
+
+    <div class="js-wow fadeInUpSmall">
+        <div class="b-component-title">
+            <div class="d-flex justify-content-between">
+                <h2>Акции и новости</h2>
+
+                <a class="link-to-all" href="{% url 'news' %}">
+                    <span>Все новости и акции клиники</span>
+
+                    <svg class="icon icon_title-grid ">
+                        <use xlink:href="img/svg/sprite.svg#title-grid"></use>
+                    </svg> </a>
+            </div>
+        </div>
+
+        <div class="b-news-list">
+            <div class="position-relative">
+
+                <div class="swiper-container">
+
+                    <div class="swiper-wrapper">
+                        {% for item in news %}
+                        <a class="news swiper-slide" href="{{ item.get_absolute_url }}">
+
+                            {% if item.photo %}
+                            <img class="img" src={{ item.photo.url }} width="285" height="185">
+
+                            {% else %}
+                            <p></p>
+                            {% endif %}
+
+                            <div class="content">
+                                <div class="title">{{ item.title }}</div>
+
+                                <div class="description">
+                                    <div class="arrow">
+                                        <span>Читать далее</span>
+
+                                        <svg class="icon icon_news-list-read-more ">
+                                            <use xlink:href="img/svg/sprite.svg#news-list-read-more"></use>
+                                        </svg>
+                                    </div>
+
+                                    <div class="text">{{ item.content|safe }}<br>
+                                        Дата публикации:&nbsp;{{ item.created_at }}</div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+
+                <div class="b-slider-mobile-navigation">
+                    <div class="swiper-button-prev"></div>
+                    <a class="link" href="about/news/index.html">
+                        <span>Все новости клиники</span>
+
+                        <svg class="icon icon_slider-mobile-navigation-grid ">
+                            <use xlink:href="img/svg/sprite.svg#slider-mobile-navigation-grid"></use>
+                        </svg> </a>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <div class="js-wow fadeInUpSmall">
+                <div class="b-component-title">
+                    <div class="d-flex justify-content-between">
+                        <h2>Врачи клиники</h2>
+
+                        <a href="{% url 'doctors' %}">
+                            <span>Все врачи клиники</span>
+
+                            <svg class="icon icon_title-grid ">
+                                <use xlink:href="img/svg/sprite.svg#title-grid"></use>
+                            </svg> </a>
+                    </div>
+                </div>
+
+                <div class="b-doctors-list">
+
+                    <div class="position-relative">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                {% for item in doctors %}
+
+
+                                <div class="swiper-slide">
+
+
+                                    <a href="{{ item.get_absolute_url }}" id="bx_2764924962_131" class="doctor">
+                                        <div class="embed-responsive embed-responsive-3by4">
+                                            {% if item.image %}
+                                            <img class="img" src={{ item.image.url }} width="289" height="400">
+                                        </div>
+                                        {% else %}
+                                        <p></p>
+                                        {% endif %}
+                                        <div class="content">
+                                            <div class="name">{{ item.title }}</div>
+
+                                            <div class="description">{{ item.shortdescription|safe}} </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+
+            <div class="b-slider-mobile-navigation">
+                <div class="swiper-button-prev"></div>
+                <a class="link" href="{% url 'doctors' %}">
+                    <span>Все врачи клиники</span>
+
+                    <svg class="icon icon_slider-mobile-navigation-grid ">
+                        <use xlink:href="img/svg/sprite.svg#slider-mobile-navigation-grid"></use>
+                    </svg> </a>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

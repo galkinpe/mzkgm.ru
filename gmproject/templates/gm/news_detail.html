@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="b-bread-crumbs"><a href="{% url 'home' %}">Главная</a><a href="{% url 'about' %}">О клинике</a><a
+            href="{% url 'news' %}">Новости и акции</a><span>{{ news.title }}</span></div>
+    <div class="b-component-title">
+        <div class="d-flex justify-content-between">
+            <h1>{{ news.title }}</h1>
+            <a class="link-to-all" href="{% url 'news' %}">
+                <span>Все новости</span>
+
+                <svg class="icon icon_title-grid ">
+                    <use xlink:href="../../../local/templates/gm/images/sprite.svg#title-grid"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+
+    <div class="b-news-detail js-wow fadeInUpSmall">
+
+
+        <div class="row">
+            <div class="col-11 col-md-9 m-auto">
+                <div class="content">
+                    <p>
+                        {{ news.content|safe }}
+                    </p>
+
+                </div>
+
+                <div class="date mb-4">
+                    {{ news.created_at }} </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="js-wow fadeInUpSmall">
+        <div class="b-component-title">
+            <h2>Еще новости и акции</h2>
+
+            <div class="b-news-list">
+                <div class="row js-load-more-container">
+
+
+
+                    <div class="row">
+                        {% for item in news_all %}
+                        <div class="col-sm-3">
+
+                            <a id="bx_2745216059_43511" class="news" href="{{ item.get_absolute_url }}">
+
+
+
+                                {% if item.photo %}
+                                <img class="img" src={{ item.photo.url }} width="285" height="185">
+
+                                {% else %}
+                                <p></p>
+                                {% endif %}
+
+
+                                <div class="content">
+                                    <div class="title">{{ item.title }}</div>
+
+                                    <div class="description">
+                                        <div class="arrow">
+                                            <span>Читать далее</span>
+
+                                            <svg class="icon icon_news-list-read-more ">
+                                                <use xlink:href="{{ item.get_absolute_url }}">
+                                                </use>
+                                            </svg>
+                                        </div>
+                                        <div class="text">{{ item.content }}<br>
+                                            Дата публикации:{{ item.created_at }}</div>
+                                    </div>
+                                </div>
+
+                            </a>
+
+                        </div>
+                        {% endfor %}
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="b-footer">
+        <div class="to-top-arrow" style="display: none;">
+            <div class="circle">
+                <a class="arrow">
+
+                    <svg class="icon icon_loadmore-arrow-down ">
+                        <use xlink:href="../../../local/templates/gm/images/sprite.svg#loadmore-arrow-down"></use>
+                    </svg> </a>
+            </div>
+        </div>
+    </div>
+    <a class="b-load-more js-load-more-btn show-all" href="indexbae4.html?SHOWALL_1=1">
+        <div class="arrow">
+
+            <svg class="icon icon_loadmore-arrow-down ">
+                <use xlink:href="../../local/templates/gm/images/sprite.svg#loadmore-arrow-down"></use>
+            </svg>
+        </div>
+        Показать все новости
+        <div class="counter">180</div>
+    </a>
+</div>
+{% endblock %}

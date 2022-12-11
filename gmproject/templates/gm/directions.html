@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="b-bread-crumbs"><a href="{% url 'home' %}">Главная</a><span>Услуги</span></div>
+    <div class=" b-component-title">
+        <div class="d-flex justify-content-between">
+            <h1>Направления клиники</h1>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="b-directions js-wow fadeInUpSmall">
+        <div class="row">
+            {% for item in directions %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <a class="action" href="{{ item.get_absolute_url }}">
+                    <div class="img">
+                        {% if item.icon %}
+                        <img src="{{ item.icon.url }}" width="102" height="102">
+                        {% else %}
+                        <p></p>
+                        {% endif %}
+                    </div>
+
+                    <span class="name">{{ item.title }}</span>
+                </a>
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

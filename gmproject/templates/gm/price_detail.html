@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="ru">
+
+{% block content %}
+
+
+<div class="container">
+    <div class="b-bread-crumbs"><a href="{% url 'home' %}">Главная</a><a
+            href="{% url 'price' %}">Прейскурант</a><span>{{ price.title }}</span></div>
+    <div class="b-component-title">
+        <div class="d-flex justify-content-between">
+            <h1>{{ direction.title }}</h1>
+            <a class="link-to-all" href="{% url 'price' %}">
+                <span>Все направления</span>
+
+                <svg class="icon icon_title-grid ">
+                    <use xlink:href="../../local/templates/gm/images/sprite.svg#title-grid"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="description">
+                <div class="search-text" style="font-size: 66px;">{{ price.title }}</div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="b-about">
+            <div class="row">
+                <div class="col-12 col-lg-16">
+                    <div class="description">
+                        {{ price.content|safe }}
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

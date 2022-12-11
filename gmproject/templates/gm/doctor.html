@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="b-bread-crumbs"><a href="{% url 'home' %}">Главная</a><a href="{% url 'doctors' %}">Врачи
+            клиники</a><span>{{ doctor.title }}</span></div>
+    <div class="b-component-title">
+        <div class="d-flex justify-content-between">
+            <h1>{{ doctor.title }}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+
+
+
+    <div class="b-doctor-card js-wow fadeInUpSmall">
+        <div class="doctor-card">
+            <div class="row">
+                <div class="col-lg-5 col-sm-12">
+                    <div class="block-doctor">
+                        <div class="doctor">
+                            <img src={{ doctor.image.url }} width="460" height="635" alt="{{ doctor.title }}"
+                                title="{{ doctor.title }}">
+
+                            <div class="doctor-description">
+                                {{ doctor.shortdescription|safe }}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-sm-12">
+                    <div class="description">
+                        <div class="text">
+                            <p>
+                                {{ doctor.description|safe }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock %}

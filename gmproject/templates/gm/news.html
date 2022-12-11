@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+<!doctype html>
+<html lang="ru">
+
+{% block content %}
+
+<div class="container">
+    <div class="b-bread-crumbs"><a href="{% url 'home' %}">Главная</a><a href="{% url 'about' %}">О
+            клинике</a><span>Новости и акции</span></div>
+    <div class="b-component-title">
+        <div class="d-flex justify-content-between">
+            <h1>Новости и акции</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+
+
+    <div class="b-news-list">
+        <div class="row js-load-more-container">
+
+
+
+            <div class="row">
+                {% for item in news %}
+                <div class="col-sm-3">
+
+                    <a id="bx_2745216059_43511" class="news" href="{{ item.get_absolute_url }}">
+
+
+                        {% if item.photo %}
+                        <img class="img" src={{ item.photo.url }} width="285" height="185">
+
+                        {% else %}
+                        <p></p>
+                        {% endif %}
+
+                        <div class="content">
+                            <div class="title">{{ item.title }}</div>
+
+                            <div class="description">
+                                <div class="arrow">
+                                    <span>Читать далее</span>
+
+                                    <svg class="icon icon_news-list-read-more ">
+                                        <use xlink:href="{{ item.get_absolute_url }}">
+                                        </use>
+                                    </svg>
+                                </div>
+                                <div class="text">{{ item.content|safe }}<br>
+                                    Дата публикации:{{ item.created_at }}</div>
+                            </div>
+                        </div>
+
+                    </a>
+
+                </div>
+                {% endfor %}
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
